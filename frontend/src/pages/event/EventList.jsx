@@ -101,7 +101,7 @@ const EventList = () => {
                 </div>
             </div>
             {loading ? (
-                <div className="min-h-screen bg-gray-200 flex justify-center items-center">
+                <div className="min-h-screen flex justify-center items-center">
                     <Spinner className="h-20 w-20" />
                 </div>
             ) : (
