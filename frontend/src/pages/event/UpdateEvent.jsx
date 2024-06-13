@@ -20,7 +20,7 @@ const UpdateEvent = () => {
     useEffect(() => {
         const fetchEvent = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/events/${id}`);
+                const response = await axios.get(`https://event-management-system-pyg9.onrender.com/api/events/${id}`);
                 const eventData = response.data;
                 setEvent({
                     ...eventData,
@@ -47,7 +47,7 @@ const UpdateEvent = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5000/api/events/${id}`, event);
+            await axios.put(`https://event-management-system-pyg9.onrender.com/api/events/${id}`, event);
             toast.success('Event updated successfully!');
             setTimeout(() => {
                 navigate('/dashboard');
