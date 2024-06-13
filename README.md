@@ -8,7 +8,7 @@ MONGO_URI=mongodb+srv://debarajmalik05:bGyU0mKaJrMfcXPR@cluster0.fczvg4i.mongodb
 
 
 
-in this website, **forget password** feature.
+in this website, to access  **forget password** feature.
 
 your own gmail and your gmail app pass.
 
