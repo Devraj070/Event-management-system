@@ -37,7 +37,7 @@ function App() {
           <Route path="/purchase/:eventId" element={<PurchaseTicket />} />
           <Route path="/discussion/:eventId" element={<Discussion />} />
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/user/register" element={<Register />}></Route>
+          <Route path="/register" element={<Register />}></Route>
           <Route path="/event-lists" element={<EventList />}></Route>
           <Route path="/create-event" element={<CreateEvent />}></Route>
           <Route path="/update-event/:id" element={<UpdateEvent />} />
