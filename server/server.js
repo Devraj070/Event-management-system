@@ -6,6 +6,7 @@ const events = require('./routes/events');
 const booking = require('./routes/Booking');
 const userRoutes = require('./routes/UserRoutes');
 const search = require('./routes/search');
+const contact = require('./routes/ContactUs')
 
 
 
@@ -26,6 +27,8 @@ app.use('/api/events', events);
 app.use('/api/bookings', booking);
 app.use('/api/users', userRoutes);
 app.use('/api/search', search);
+app.use('/api/contact', contact);
+
 
 
 
