@@ -226,7 +226,7 @@ const EventList = () => {
                         onChange={handleFilterChange}
                         className="py-2 px-6 rounded-md text-black"
                     />
-                    <select value={sort} onChange={handleSortChange} className="py-2 px-6 rounded-md text-black">
+                    <select value={sort} onChange={handleSortChange} className="py-2 px-4 rounded-md text-black">
                         <option value="">Sort by</option>
                         <option value="date">Date</option>
                         <option value="price">Price</option>
