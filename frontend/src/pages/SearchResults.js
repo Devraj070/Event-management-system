@@ -1,7 +1,9 @@
+
 // import React, { useState, useEffect } from 'react';
 // import axios from 'axios';
 // import { useLocation, useNavigate } from 'react-router-dom';
 // import toast, { Toaster } from 'react-hot-toast';
+// import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaTicketAlt } from 'react-icons/fa';
 
 // const SearchResults = () => {
 //     const [events, setEvents] = useState([]);
@@ -47,29 +49,49 @@
 //     };
 
 //     return (
-//         <div className='bg-slate-400'>
-//             <h3 className="text-2xl font-bolds pt-20 px-32 ">Search Results for "{query}"</h3>
-//             <div className="max-w-7xl mx-auto p-8 mt-3 bg-slate-400 h-screen">
+//         <div className="bg-blue-700 px-4 pt-20 min-h-screen pb-6">
+//             <h3 className="text-2xl font-bolds pt-20 text-white">Search Results for "{query}"</h3>
+//             <div className="max-w-7xl mx-auto p-8 mt-3">
 //                 <Toaster />
-
 //                 {loading ? (
-//                     <p className="text-center text-white">Loading...</p>
+//                     <p className="text-center text-gray-700">Loading...</p>
 //                 ) : (
-//                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+//                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 //                         {events.map((event) => (
-//                             <div key={event._id} className="p-6 bg-white shadow-md rounded-lg">
-//                                 <h2 className="text-2xl font-bold mb-2 text-black">{event.title}</h2>
-//                                 <p className="text-gray-700 mb-2">{event.description}</p>
-//                                 <p className="text-gray-700 mb-2">{new Date(event.date).toLocaleDateString()} at {event.time}</p>
-//                                 <p className="text-gray-700 mb-2">Location: {event.location}</p>
-//                                 <p className="text-gray-700 mb-2">Ticket Price: ₹{event.ticketPrice}</p>
-//                                 <p className="text-gray-700 mb-2">Privacy: {event.privacySetting}</p>
-//                                 <button
-//                                     onClick={() => handleBookNow(event._id)}
-//                                     className="mt-4 bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
-//                                 >
-//                                     Book Now
-//                                 </button>
+//                             <div key={event._id} className="relative">
+//                                 <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+//                                     <div className="p-6">
+//                                         <h2 className="text-xl font-semibold text-gray-800 mb-2">{event.title}</h2>
+//                                         <p className="text-sm text-gray-600 mb-4">{event.description}</p>
+//                                         <div className="flex items-center text-gray-700 mb-2">
+//                                             <FaCalendarAlt className="mr-2" />
+//                                             <span>{new Date(event.date).toLocaleDateString()}</span>
+//                                         </div>
+//                                         <div className="flex items-center text-gray-700 mb-2">
+//                                             <FaClock className="mr-2" />
+//                                             <span>{event.time}</span>
+//                                         </div>
+//                                         <div className="flex items-center text-gray-700 mb-2">
+//                                             <FaMapMarkerAlt className="mr-2" />
+//                                             <span>{event.location}</span>
+//                                         </div>
+//                                         <div className="flex items-center text-gray-700 mb-2">
+//                                             <FaTicketAlt className="mr-2" />
+//                                             <span>₹{event.ticketPrice}</span>
+//                                         </div>
+//                                     </div>
+//                                     <div className="px-6 py-4 bg-gray-100">
+//                                         <button
+//                                             onClick={() => handleBookNow(event._id)}
+//                                             className="w-full bg-indigo-500 text-white py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+//                                         >
+//                                             Book Now
+//                                         </button>
+//                                     </div>
+//                                 </div>
+//                                 <div className="absolute top-0 right-0 bg-green-400 px-4 py-2 rounded-tr-lg rounded-bl-lg">
+//                                     <span className="text-sm text-white">Owner: {event.owner}</span>
+//                                 </div>
 //                             </div>
 //                         ))}
 //                     </div>
@@ -131,11 +153,15 @@ const SearchResults = () => {
 
     return (
         <div className="bg-blue-700 px-4 pt-20 min-h-screen pb-6">
-            <h3 className="text-2xl font-bolds pt-20 text-white">Search Results for "{query}"</h3>
+            <h3 className="text-2xl font-bold pt-20 text-white">Search Results for "{query}"</h3>
             <div className="max-w-7xl mx-auto p-8 mt-3">
                 <Toaster />
                 {loading ? (
-                    <p className="text-center text-gray-700">Loading...</p>
+                    <div className="flex justify-center items-center h-64">
+                        <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-white" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {events.map((event) => (

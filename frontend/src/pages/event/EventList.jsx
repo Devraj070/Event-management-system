@@ -135,7 +135,6 @@
 // };
 
 // export default EventList;
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -147,6 +146,7 @@ const EventList = () => {
     const [filteredEvents, setFilteredEvents] = useState([]);
     const [filter, setFilter] = useState('');
     const [sort, setSort] = useState('');
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -156,8 +156,10 @@ const EventList = () => {
                 const sortedEvents = sortEvents(response.data.reverse(), sort);
                 setEvents(sortedEvents);
                 setFilteredEvents(sortedEvents);
+                setLoading(false);
             } catch (error) {
                 console.error('There was an error fetching the events!', error);
+                setLoading(false);
             }
         };
 
@@ -233,49 +235,57 @@ const EventList = () => {
                     </select>
                 </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {filteredEvents.map((event) => (
-                    <div key={event._id} className="bg-white shadow-lg rounded-lg overflow-hidden relative">
-                        <div className="p-6">
-                            <h2 className="text-xl font-semibold text-gray-800 mb-2">{event.title}</h2>
-                            <p className="text-sm text-gray-600 mb-4">{event.description}</p>
-                            <div className="flex items-center text-gray-700 mb-2">
-                                <FaCalendarAlt className="mr-2" />
-                                <span>{new Date(event.date).toLocaleDateString()}</span>
-                            </div>
-                            <div className="flex items-center text-gray-700 mb-2">
-                                <FaClock className="mr-2" />
-                                <span>{event.time}</span>
-                            </div>
-                            <div className="flex items-center text-gray-700 mb-2">
-                                <FaMapMarkerAlt className="mr-2" />
-                                <span>{event.location}</span>
-                            </div>
-                            <div className="flex items-center text-gray-700 mb-2">
-                                <FaTicketAlt className="mr-2" />
-                                <span>₹{event.ticketPrice}</span>
-                            </div>
-                            <div className="flex items-center text-gray-700 mb-2">
-                                <FaLock className="mr-2" />
-                                <span>{event.privacySetting}</span>
-                            </div>
-                        </div>
-                        <div className="absolute top-0 right-0 bg-green-400 px-4 py-2 rounded-tr-lg rounded-bl-lg">
-                            <span>Owner: {event.owner}</span>
-                        </div>
-                        <div className="px-6 py-4 bg-gray-100">
-                            <button
-                                onClick={() => handleBookNow(event._id)}
-                                className={`w-full py-2 rounded-md focus:outline-none ${event.booked ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 text-white hover:bg-indigo-600 focus:bg-indigo-600'
-                                    }`}
-                                disabled={event.booked}
-                            >
-                                {event.booked ? 'Booked' : 'Book Now'}
-                            </button>
-                        </div>
+            {loading ? (
+                <div className="flex justify-center items-center h-64">
+                    <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-white" role="status">
+                        <span className="visually-hidden">Loading...</span>
                     </div>
-                ))}
-            </div>
+                </div>
+            ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    {filteredEvents.map((event) => (
+                        <div key={event._id} className="bg-white shadow-lg rounded-lg overflow-hidden relative">
+                            <div className="p-6">
+                                <h2 className="text-xl font-semibold text-gray-800 mb-2">{event.title}</h2>
+                                <p className="text-sm text-gray-600 mb-4">{event.description}</p>
+                                <div className="flex items-center text-gray-700 mb-2">
+                                    <FaCalendarAlt className="mr-2" />
+                                    <span>{new Date(event.date).toLocaleDateString()}</span>
+                                </div>
+                                <div className="flex items-center text-gray-700 mb-2">
+                                    <FaClock className="mr-2" />
+                                    <span>{event.time}</span>
+                                </div>
+                                <div className="flex items-center text-gray-700 mb-2">
+                                    <FaMapMarkerAlt className="mr-2" />
+                                    <span>{event.location}</span>
+                                </div>
+                                <div className="flex items-center text-gray-700 mb-2">
+                                    <FaTicketAlt className="mr-2" />
+                                    <span>₹{event.ticketPrice}</span>
+                                </div>
+                                <div className="flex items-center text-gray-700 mb-2">
+                                    <FaLock className="mr-2" />
+                                    <span>{event.privacySetting}</span>
+                                </div>
+                            </div>
+                            <div className="absolute top-0 right-0 bg-green-400 px-4 py-2 rounded-tr-lg rounded-bl-lg">
+                                <span>Owner: {event.owner}</span>
+                            </div>
+                            <div className="px-6 py-4 bg-gray-100">
+                                <button
+                                    onClick={() => handleBookNow(event._id)}
+                                    className={`w-full py-2 rounded-md focus:outline-none ${event.booked ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-500 text-white hover:bg-indigo-600 focus:bg-indigo-600'
+                                        }`}
+                                    disabled={event.booked}
+                                >
+                                    {event.booked ? 'Booked' : 'Book Now'}
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
