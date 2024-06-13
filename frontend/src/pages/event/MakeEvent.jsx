@@ -50,6 +50,10 @@ const MakeEvent = () => {
         }
     };
 
+    if (!isLoggedIn) {
+        return null; // Or a different UI for non-logged in users
+    }
+
     return (
         <form onSubmit={handleSubmit} className="max-w-4xl mx-auto px-8 py-4 shadow-md rounded-lg bg-white my-36 ">
             <Toaster />

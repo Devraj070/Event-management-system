@@ -26,7 +26,8 @@ const Feedback = () => {
         }
     };
 
-    return (
+    return (<>
+        <Toaster />
         <div className="min-h-screen flex flex-col items-center justify-center px-4">
             <h1 className="text-3xl font-bold mb-8 text-white">Event Feedback</h1>
             <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-md shadow-md">
@@ -79,6 +80,7 @@ const Feedback = () => {
                 ))}
             </div>
         </div>
+    </>
     );
 };
 

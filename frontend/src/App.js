@@ -20,7 +20,6 @@ import ContactUs from './components/navbar/ContactUs';
 import AboutUs from './components/navbar/AboutUs';
 import PrivacyPolicy from './components/navbar/PrivacyPolicy';
 import QnA from './components/QnA';
-import Feedback from './components/Feedback';
 import BothQnAandFeedback from './components/BothQnAandFeedback';
 
 function App() {
