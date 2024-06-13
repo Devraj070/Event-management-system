@@ -107,6 +107,7 @@ import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaTicketAlt } from 'react-icons/fa';
+import Spinner from '../Loading/spinner.svg'
 
 const SearchResults = () => {
     const [events, setEvents] = useState([]);
@@ -157,11 +158,10 @@ const SearchResults = () => {
             <div className="max-w-7xl mx-auto p-8 mt-3">
                 <Toaster />
                 {loading ? (
-                    <div className="flex justify-center items-center h-64">
-                        <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-white" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </div>
+                    <div className="min-h-screen bg-gray-200 flex justify-center items-center">
+                        <Spinner className="h-20 w-20" />
                     </div>
+
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {events.map((event) => (
