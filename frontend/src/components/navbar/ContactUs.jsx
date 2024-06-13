@@ -47,7 +47,7 @@ const ContactUs = () => {
 
     const onSubmit = async (data) => {
         try {
-            await axios.post('http://localhost:5000/api/contact', data);
+            await axios.post('https://event-management-system-pyg9.onrender.com/api/contact', data);
             toast.success('Form submitted successfully!');
             reset();
         } catch (error) {

@@ -9,7 +9,7 @@
 //     useEffect(() => {
 //         const fetchBookedEvents = async () => {
 //             try {
-//                 const response = await axios.get(`http://localhost:5000/api/bookings/user/${userId}`);
+//                 const response = await axios.get(`https://event-management-system-pyg9.onrender.com/api/bookings/user/${userId}`);
 //                 setBookedEvents(response.data.reverse());
 //             } catch (error) {
 //                 console.error('Error fetching booked events:', error);
@@ -78,7 +78,7 @@ const BookedEvent = () => {
     useEffect(() => {
         const fetchBookedEvents = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/bookings/user/${userId}`);
+                const response = await axios.get(`https://event-management-system-pyg9.onrender.com/api/bookings/user/${userId}`);
                 setBookedEvents(response.data.reverse());
             } catch (error) {
                 console.error('Error fetching booked events:', error);

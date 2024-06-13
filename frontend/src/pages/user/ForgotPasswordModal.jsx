@@ -41,7 +41,7 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
     setSuccessMessage('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/users/reset-password', {
+      const response = await fetch('https://event-management-system-pyg9.onrender.com/api/users/reset-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://localhost:5000/api/users/verify-otp', {
+      const response = await fetch('https://event-management-system-pyg9.onrender.com/api/users/verify-otp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -93,7 +93,7 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/users/update-password', {
+      const response = await fetch('https://event-management-system-pyg9.onrender.com/api/users/update-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -40,7 +40,7 @@ const MakeEvent = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/events/create', { ...event, userId, owner });
+            const response = await axios.post('https://event-management-system-pyg9.onrender.com/api/events/create', { ...event, userId, owner });
             console.log(response.data);
             toast.success('Event created and hosted for promotion!');
             navigate('/dashboard');

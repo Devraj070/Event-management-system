@@ -11,7 +11,7 @@
 //     useEffect(() => {
 //         const fetchEvents = async () => {
 //             try {
-//                 const response = await axios.get(`http://localhost:5000/api/events/user/${userId}`);
+//                 const response = await axios.get(`https://event-management-system-pyg9.onrender.com/api/events/user/${userId}`);
 //                 setEvents(response.data.reverse());
 //             } catch (error) {
 //                 console.error('There was an error fetching the events!', error);
@@ -24,7 +24,7 @@
 
 //     const handleDelete = async (eventId) => {
 //         try {
-//             await axios.delete(`http://localhost:5000/api/events/${eventId}`);
+//             await axios.delete(`https://event-management-system-pyg9.onrender.com/api/events/${eventId}`);
 //             setEvents(events.filter(event => event._id !== eventId));
 //             toast.success('Event and associated bookings deleted successfully!');
 //         } catch (error) {
@@ -95,7 +95,7 @@ const UserEvents = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/events/user/${userId}`);
+                const response = await axios.get(`https://event-management-system-pyg9.onrender.com/api/events/user/${userId}`);
                 setEvents(response.data.reverse());
             } catch (error) {
                 console.error('There was an error fetching the events!', error);
@@ -108,7 +108,7 @@ const UserEvents = () => {
 
     const handleDelete = async (eventId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/events/${eventId}`);
+            await axios.delete(`https://event-management-system-pyg9.onrender.com/api/events/${eventId}`);
             setEvents(events.filter(event => event._id !== eventId));
             toast.success('Event and associated bookings deleted successfully!');
         } catch (error) {

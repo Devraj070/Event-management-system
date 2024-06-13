@@ -14,7 +14,7 @@
 //         const fetchSearchResults = async () => {
 //             try {
 //                 setLoading(true);
-//                 const response = await axios.get(`http://localhost:5000/api/search?query=${query}`);
+//                 const response = await axios.get(`https://event-management-system-pyg9.onrender.com/api/search?query=${query}`);
 //                 setEvents(response.data.data);
 //             } catch (error) {
 //                 console.error('There was an error fetching the search results!', error);
@@ -35,7 +35,7 @@
 //             return;
 //         }
 //         try {
-//             await axios.post('http://localhost:5000/api/bookings', { eventId, userId });
+//             await axios.post('https://event-management-system-pyg9.onrender.com/api/bookings', { eventId, userId });
 //             toast.success('Booking successful!');
 //         } catch (error) {
 //             if (error.response && error.response.status === 400) {
@@ -97,7 +97,7 @@ const SearchResults = () => {
         const fetchSearchResults = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:5000/api/search?query=${query}`);
+                const response = await axios.get(`https://event-management-system-pyg9.onrender.com/api/search?query=${query}`);
                 setEvents(response.data.data);
             } catch (error) {
                 console.error('There was an error fetching the search results!', error);
@@ -118,7 +118,7 @@ const SearchResults = () => {
             return;
         }
         try {
-            await axios.post('http://localhost:5000/api/bookings', { eventId, userId });
+            await axios.post('https://event-management-system-pyg9.onrender.com/api/bookings', { eventId, userId });
             toast.success('Booking successful!');
         } catch (error) {
             if (error.response && error.response.status === 400) {

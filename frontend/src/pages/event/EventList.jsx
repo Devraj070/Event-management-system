@@ -14,7 +14,7 @@
 //     useEffect(() => {
 //         const fetchEvents = async () => {
 //             try {
-//                 const response = await axios.get('http://localhost:5000/api/events');
+//                 const response = await axios.get('https://event-management-system-pyg9.onrender.com/api/events');
 //                 const sortedEvents = sortEvents(response.data.reverse(), sort);
 //                 setEvents(sortedEvents);
 //                 setFilteredEvents(sortedEvents);
@@ -33,7 +33,7 @@
 //             return;
 //         }
 //         try {
-//             await axios.post('http://localhost:5000/api/bookings', { eventId, userId });
+//             await axios.post('https://event-management-system-pyg9.onrender.com/api/bookings', { eventId, userId });
 //             toast.success('Booking successful!');
 //         } catch (error) {
 //             if (error.response && error.response.status === 400) {
@@ -152,7 +152,7 @@ const EventList = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/events');
+                const response = await axios.get('https://event-management-system-pyg9.onrender.com/api/events');
                 const sortedEvents = sortEvents(response.data.reverse(), sort);
                 setEvents(sortedEvents);
                 setFilteredEvents(sortedEvents);
@@ -171,7 +171,7 @@ const EventList = () => {
             return;
         }
         try {
-            await axios.post('http://localhost:5000/api/bookings', { eventId, userId });
+            await axios.post('https://event-management-system-pyg9.onrender.com/api/bookings', { eventId, userId });
             toast.success('Booking successful!');
             // Update the booked status of the event
             const updatedEvents = events.map(event =>

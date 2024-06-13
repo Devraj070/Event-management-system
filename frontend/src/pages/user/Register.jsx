@@ -29,7 +29,7 @@ const Register = () => {
             return;
         }
         try {
-            const response = await axios.post('http://localhost:5000/api/users/register', formData);
+            const response = await axios.post('https://event-management-system-pyg9.onrender.com/api/users/register', formData);
             console.log(response.data);
             // Store user ID and registration status in session storage
             sessionStorage.setItem('userId', response.data.userId);
