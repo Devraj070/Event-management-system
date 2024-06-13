@@ -140,7 +140,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaTicketAlt, FaLock } from 'react-icons/fa';
-import Spinner from '../../Loading/spinner.svg'
+import { ReactComponent as Spinner } from '../../Loading/spinner.svg';
 
 const EventList = () => {
     const [events, setEvents] = useState([]);
