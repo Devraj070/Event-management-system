@@ -1,3 +1,10 @@
+LIVE DEMO :  https://event-management-system-two.vercel.app/
+
+
+
+
+
+
 add  .env file in backend
 
 for connective my database use can use below URL,
