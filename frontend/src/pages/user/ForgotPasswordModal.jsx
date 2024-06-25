@@ -125,7 +125,7 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
           <div className="bg-white w-full max-w-md mx-auto rounded-lg shadow-lg overflow-hidden z-50">
             <div className="px-6 py-4">
               <div className="flex justify-between items-center pb-3">
-                <h2 className="text-xl font-bold">Forgot Password</h2>
+                <h2 className="text-xl font-bold text-black">Forgot Password</h2>
                 <button className="text-gray-600 hover:text-gray-800 focus:outline-none" onClick={onClose}>
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
