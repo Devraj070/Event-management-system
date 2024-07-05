@@ -5,8 +5,6 @@ import HeroSection from './components/navbar/HeroSection';
 import Footer from './components/navbar/Footer';
 import EventDiscovery from './pages/EventDiscovery';
 import Dashboard from './pages/Dashboard';
-import PurchaseTicket from './pages/PurchaseTicket';
-import Discussion from './pages/Discussion';
 import Login from './pages/user/Login';
 import Register from './pages/user/Register';
 import EventList from './pages/event/EventList';
@@ -27,15 +25,12 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-
         <Routes>
           <Route path="/" element={<div>
             <HeroSection /><EventList /><BothQnAandFeedback />
           </div>} />
           <Route path="/discover" element={<EventDiscovery />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/purchase/:eventId" element={<PurchaseTicket />} />
-          <Route path="/discussion/:eventId" element={<Discussion />} />
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/event-lists" element={<EventList />}></Route>
@@ -49,7 +44,6 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
           <Route path="/QnA" element={<QnA />} />
-
         </Routes>
         <Footer />
       </div>
@@ -58,3 +52,4 @@ function App() {
 }
 
 export default App;
+

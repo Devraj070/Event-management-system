@@ -19,11 +19,17 @@ const Register = () => {
         setFormData(prevState => ({
             ...prevState,
             [name]: value
+
         }));
     };
 
     const handleSubmit = async e => {
         e.preventDefault();
+
+        if (formData.password.length < 6) {
+            toast.error("please make sure the password should contain 6 dgit");
+            return;
+        }
         if (formData.password !== formData.confirmPassword) {
             toast.error('Passwords do not match');
             return;
@@ -70,11 +76,11 @@ const Register = () => {
                     <hr className="w-full border-gray-300" />
                 </div>
                 <div className="grid grid-cols-1 gap-4 mt-6">
-                    <button onClick={() => toast.error('Admin says: This feature is in progess!! try manual Register')} className="flex items-center justify-center bg-red-500 text-white py-2 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600">
+                    <button onClick={() => toast.error('Admin says: This feature is in progress!! try manual Register')} className="flex items-center justify-center bg-red-500 text-white py-2 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600">
                         <FontAwesomeIcon icon={faGoogle} className="mr-2" />
                         Register with Google
                     </button>
-                    <button onClick={() => toast.error('Admin says: This feature is in progess!! try manual Register')} className="flex items-center justify-center bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:bg-blue-700">
+                    <button onClick={() => toast.error('Admin says: This feature is in progress!! try manual Register')} className="flex items-center justify-center bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:bg-blue-700">
                         <FontAwesomeIcon icon={faFacebook} className="mr-2" />
                         Register with Facebook
                     </button>

@@ -17,7 +17,8 @@ router.get('/', async (req, res) => {
 
         const isValidDate = !isNaN(dateQuery.valueOf());
 
-        // Use regex to perform a case-insensitive search on string fields and handle number/date fields appropriately
+        // Use regex to perform a case-insensitive search on string fields and handle number/date fields appropriately.
+
         const searchConditions = [
             { title: { $regex: new RegExp(query, 'i') } },
             { description: { $regex: new RegExp(query, 'i') } },

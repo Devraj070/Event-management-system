@@ -9,7 +9,6 @@ const search = require('./routes/search');
 const contact = require('./routes/ContactUs')
 
 
-
 const cors = require('cors');
 require('dotenv').config();
 
