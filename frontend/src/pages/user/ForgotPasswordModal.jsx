@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 
-
-
-
-
 const ForgotPasswordModal = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState('');
@@ -13,7 +9,6 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
   const [otpVerified, setOtpVerified] = useState(false);
-
 
 
   // Reset all states when the modal is opened
@@ -97,6 +92,7 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
     event.preventDefault();
     setIsLoading(true);
     setError(null);
+
 
     try {
       const response = await fetch('https://event-management-system-pyg9.onrender.com/api/users/update-password', {

@@ -26,10 +26,12 @@ const Register = () => {
     const handleSubmit = async e => {
         e.preventDefault();
 
-        if (formData.password.length < 6) {
-            toast.error("please make sure the password should contain 6 dgit");
+        const strongPasswordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{":;'?/>.<,])(?=.*[a-zA-Z]).{6,}$/;
+        if (!strongPasswordRegex.test(formData.password)) {
+            toast.error("Password should contain at least 6 characters including at least one number, one uppercase letter, one lowercase letter, and one special character");
             return;
         }
+
         if (formData.password !== formData.confirmPassword) {
             toast.error('Passwords do not match');
             return;
