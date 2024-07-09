@@ -91,7 +91,11 @@ const Login = () => {
                         <span className="p-2 text-gray-400">OR</span>
                         <hr className="w-full border-gray-300" />
                     </div>
+<<<<<<< HEAD
                     {/* <div className="grid grid-cols-1 gap-4 mt-6">
+=======
+{/*                     <div className="grid grid-cols-1 gap-4 mt-6">
+>>>>>>> 9cc152d59aae4c670d2acb5b7118d0b8fd66ebc5
                         <button onClick={() => toast.error('Admin says: This feature is in progress!! try manual Login')} className="flex items-center justify-center bg-red-500 text-white py-2 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600">
                             <FontAwesomeIcon icon={faGoogle} className="mr-2" />
                             Login with Google
