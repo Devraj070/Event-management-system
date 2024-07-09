@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaTicketAlt, FaLock } from 'react-icons/fa';
 import { ReactComponent as Spinner } from '../../Loading/spinner.svg';
 
@@ -82,7 +82,6 @@ const EventList = () => {
 
     return (
         <div className="bg-blue-700 px-4 pt-20 min-h-screen pb-6">
-            <Toaster />
             <h1 className="text-3xl font-bold mb-8 text-center">Upcoming Events</h1>
             <div className="flex justify-between items-center mb-4">
                 <div className="flex space-x-4">

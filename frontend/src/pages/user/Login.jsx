@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import ForgotPasswordModal from './ForgotPasswordModal';
 
@@ -54,7 +54,6 @@ const Login = () => {
     return (
         <>
             <div className="flex justify-center items-center min-h-screen bg-gray-600">
-                <Toaster />
                 <div className="bg-white p-10 rounded-lg shadow-lg w-full max-w-md">
                     <h2 className="text-3xl mb-6 text-center font-bold text-gray-700">Login</h2>
                     <form className="space-y-5" onSubmit={handleSubmit}>
@@ -92,7 +91,7 @@ const Login = () => {
                         <span className="p-2 text-gray-400">OR</span>
                         <hr className="w-full border-gray-300" />
                     </div>
-                    <div className="grid grid-cols-1 gap-4 mt-6">
+                    {/* <div className="grid grid-cols-1 gap-4 mt-6">
                         <button onClick={() => toast.error('Admin says: This feature is in progress!! try manual Login')} className="flex items-center justify-center bg-red-500 text-white py-2 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600">
                             <FontAwesomeIcon icon={faGoogle} className="mr-2" />
                             Login with Google
@@ -101,7 +100,7 @@ const Login = () => {
                             <FontAwesomeIcon icon={faFacebook} className="mr-2" />
                             Login with Facebook
                         </button>
-                    </div>
+                    </div> */}
                     <div className="text-center mt-6 text-sm text-gray-600">
                         Don't have an account? <a href="/register" className="text-blue-500 hover:underline">Register</a>
                     </div>

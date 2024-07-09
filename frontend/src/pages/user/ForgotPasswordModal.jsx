@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 
 const ForgotPasswordModal = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState('');
@@ -121,7 +121,6 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
 
   return (
     <>
-      <Toaster />
       {isOpen && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white w-full max-w-md mx-auto rounded-lg shadow-lg overflow-hidden z-50">

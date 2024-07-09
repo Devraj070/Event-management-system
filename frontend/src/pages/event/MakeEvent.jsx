@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt, FaTag, FaInfoCircle, FaLock, FaGlobeAmericas } from 'react-icons/fa';
 
@@ -56,7 +56,6 @@ const MakeEvent = () => {
 
     return (
         <form onSubmit={handleSubmit} className="max-w-4xl mx-auto px-8 py-4 shadow-md rounded-lg bg-white my-36 ">
-            <Toaster />
             <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
                     <label className="block text-black text-sm font-bold mb-2 flex items-center">

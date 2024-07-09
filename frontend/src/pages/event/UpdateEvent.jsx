@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
-import { toast, Toaster } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 
 const UpdateEvent = () => {
     const { id } = useParams();
@@ -60,7 +60,6 @@ const UpdateEvent = () => {
 
     return (
         <div>
-            <Toaster />
             <form onSubmit={handleSubmit} className="max-w-4xl mx-auto m-16 p-8 shadow-md rounded-lg bg-white mt-40">
                 <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
