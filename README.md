@@ -1,11 +1,11 @@
 **IMPORTANT**
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-***IMPORTANT NOTE***: i have hosted my server(this server) on Render.com to Live this project.
+***IMPORTANT NOTE***: i have hosted my server(this server) on Render.com 
 
 Thats why i used ( https://event-management-system-pyg9.onrender.com ) in Frontend for calling API. 
 
-it was provided by Render.com
+cause it was provided by Render.com for calling APIs end points.
 
 
 instead 
